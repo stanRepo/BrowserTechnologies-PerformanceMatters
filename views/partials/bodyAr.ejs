@@ -1,0 +1,49 @@
+<body>
+
+<h1>
+
+this is the bodyAr route
+</h1>
+
+<section class="inputSection">
+<form action="input">
+  <input type="text" placeholder="What are you looking for?" id="inputField">
+  <input type="button" value="submit" class="submitButton" id="trackbutton">
+</form>
+</section>
+
+<section>
+    <select id="options">
+        <option>Title</option>
+        <option>Author</option>
+        <option>ISBN</option>
+    </select>
+</section>
+
+<section id="templateData">
+
+<div id="templateImg"></div>
+<div id="templateResult"></div>
+</section>
+
+<div class="videoClass">
+<div id="updatenote" class="updatenote mt10"> loading model ..</div>
+</div>
+</div>
+<!--
+
+<a-scene embedded arjs>
+create your content here. just a box for now 
+<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+define a camera which will move according to the marker position
+<a-marker-camera preset='hiro'></a-marker-camera>
+</a-scene>
+-->
+
+<video class="videobox canvasbox" autoplay="autoplay" id="myvideo"></video>
+
+<canvas id="canvas" class="border canvasbox"></canvas>
+
+
+<% include ./arScript.ejs %>
+</body>

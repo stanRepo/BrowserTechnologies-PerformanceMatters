@@ -1,0 +1,148 @@
+/* Progressive enhancements:
+    - body{font family covers 100% of devices} 
+    - buttons ipv div.button
+    - 
+
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+    text-align: center;
+      background:linear-gradient(#00000060, #fff);
+}
+
+h1{
+    font-size: 7.5vw;
+    color: blue;
+}
+h2{
+    font-size: 2.5vw;
+}
+h3{
+    font-size:1.5vw;
+}
+
+p{
+    font-size: 1vw;
+}
+
+.canvasbox {
+    width: 0px;
+    height: 0px;
+}
+
+
+.updatenote {
+    padding: 10px;
+    background: rgb(245, 147, 20);
+    color: white;
+    display: inline;
+}
+
+
+#arjsDebugUIContainer{
+    display: none;
+}
+
+.header{
+    border-bottom: 1px solid black;
+    background-color: linear-gradient(#ffffff, #d13d3d);
+    margin-top: 20px;
+
+}
+
+.subTitle{
+
+}
+
+.subHeader{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr; 
+    grid-template-rows: 20vh 20vh;
+}
+
+.inputSection{
+    grid-column: 2/3;
+    grid-row: 0/2;
+}
+
+#inputField{
+ padding: 10px 10px;
+ margin-top: 20px;
+}
+
+
+#trackButton{
+    padding: 10px 10px;
+    margin-top: 20px;
+}
+
+#updatenote{
+    background-color: red;  
+    font-size: 2vw;
+}
+.videoClass{
+
+}
+
+button{
+    padding: 5px;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.836);
+}
+
+a{
+    text-decoration: none;
+}
+.noScriptBanner{
+    margin-top: -1000px;
+    position: absolute;
+    opacity: 1;
+    font-weight: 550;
+    background:linear-gradient(#fff, rgba(255, 255, 255, 0));
+    animation-name: noScript;
+    animation-duration: 1s;
+
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    height: 100px;
+    width:100vw;    
+    color:red;
+    padding-top: 50px;
+}
+
+.noScriptBox{
+    position: sticky;   
+}
+
+#obaIMG{
+    position: absolute;
+    z-index: -100;
+    margin-left: -50vw;
+    margin-top: -60px;
+    opacity: 0.5;
+}
+
+#templateResult{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr; 
+   grid-template-rows: 1fr 1fr 1fr 1fr
+
+}
+
+.result{
+    border: 1px solid black;
+    box-shadow: 0vw 5vh 5vw rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.result:nth-child(even){
+    
+   
+
+}

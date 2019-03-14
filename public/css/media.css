@@ -1,0 +1,28 @@
+@media only screen and (max-width: 600px) {
+   h3{
+       font-size: 15px;
+   }
+
+   #obaIMG{
+       width: 100vw;
+   }
+
+   #videoClass{
+    grid-column: 1/2;
+    grid-row:2/3;
+   }
+
+  }
+
+  @media only screen and (max-width: 800px) {
+    p{
+        font-size: 125%;
+    }
+
+  }
+  @media only screen and (max-width: 350px) {
+    p{
+        font-size: 90%;
+    }
+
+  }
