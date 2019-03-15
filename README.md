@@ -8,7 +8,7 @@ This is a single page web appication. oba-r
 2. [Install](#2-Install)
 3. [Features](#3-Features)
 4. [API](#4-API)
-5. [Design decisions](#5-Design-Decisions
+5. [Design decisions](#5-Design-Decisions)
 6. [To-do](#6-To-do)
 7. [Browser Technologies](#7-Browser-Technologies)
 8. [Performance Matters](#8-Performance-Matters)
