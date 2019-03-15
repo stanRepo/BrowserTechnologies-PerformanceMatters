@@ -1,28 +1,29 @@
-(function(){
-
-    const video = document.getElementById("myvideo");
-    const canvas = document.getElementById("canvas");
-    const context = canvas.getContext("2d");
- let trackButton = document.getElementById("trackbutton");
- let updateNote = document.getElementById("updatenote");
- trackButton.addEventListener('click', toggleVideo);
- let isVideo = false;
- let model = null;
- 
- class hand{
-     constructor(positionX, positionY, positionZ){
-         
-         this.positionX = positionX
-         this.positionY = positionY
-         this.positionZ = positionZ
+function wrapperFunction(){
+    return new Promise(resolve =>{
+        const video = document.getElementById("myvideo");
+        const canvas = document.getElementById("canvas");
+        const context = canvas.getContext("2d");
+        let trackButton = document.getElementById("i-button");
+        let updateNote = document.getElementById("updatenote");
+        trackButton.addEventListener('click', toggleVideo);
+        let isVideo = false;
+        let model = null;
+        
+        class hand{
+            constructor(positionA, positionB, positionC, positionD){
+                
+         this.positionA = positionA
+         this.positionB = positionB
+         this.positionC = positionC
+         this.positionD = positionD
         }
     }
     
     const modelParams = {
         flipHorizontal: true,   // flip e.g for video  
-     maxNumBoxes: 1,        // maximum number of boxes to detect
-     iouThreshold: 0.5,      // ioU threshold for non-max suppression
-     scoreThreshold: 0.6,    // confidence threshold for predictions.
+        maxNumBoxes: 1,        // maximum number of boxes to detect
+        iouThreshold: 0.5,      // ioU threshold for non-max suppression
+        scoreThreshold: 0.6,    // confidence threshold for predictions.
     }
     
     function startVideo() {
@@ -56,58 +57,34 @@
         model.detect(video).then(predictions => {
             if(predictions.length != 0){
                 var myhand = new hand(predictions[0].bbox[0],predictions[0].bbox[1],predictions[0].bbox[2],predictions[0].bbox[3])
-                console.log(myhand);
-            }
-            model.renderPredictions(predictions, canvas, context, video);
-            if (isVideo) {
-                requestAnimationFrame(runDetection);
-            }
-        });
-    }
-
-    // Load the model.
-    handTrack.load(modelParams).then(lmodel => {
-        // detect objects in the image.
-        model = lmodel
-        updateNote.innerText = "Loaded Model!"
-        trackButton.disabled = false
-    });
-    
- 
-    // // your code here
-// var video = document.getElementById('video');
-// if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    //     navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-        //         video.src = window.URL.createObjectURL(stream);
-        //         video.play();
-        //     });
-// };
-
-// console.log('video is playing')
-// for(var i =0; i<2; i++){
-    
-    //     setInterval(function(){
+                
+                setTimeout(()=>{
+                    console.log(myhand);
+                }, 200
+                )}
+                
+                model.renderPredictions(predictions, canvas, context, video);
+                if (isVideo) {
+                    requestAnimationFrame(runDetection);
+                }
+            });
+        }
         
-        //         const img = document.getElementById('video');  
-        //         handTrack.load().then(model => { 
-//             model.detect(img).then(predictions => {
-    //                 console.log('Predictions: ', predictions) // bbox predictions
-    //             });
-    //         });
-//     }, 2000);
-// };
+        // Load the model.
+        handTrack.load(modelParams).then(lmodel => {
+            // detect objects in the image.
+            model = lmodel
+            updateNote.innerText = "Model Loaded"
+            setTimeout(() =>{updateNote.innerText="Move your hand in front of the screen to interact"}, 1000)
+            trackButton.disabled = false
+            resolve('resolved');
+        });
+    });
+};
 
+async function asyncCall(){
+    console.log('Loading model Async')
+    await wrapperFunction();
+}
 
-// runDetection()
-
-// function runDetection() {
-    //     model.detect(video).then(predictions => {
-        //         console.log("Predictions: ", predictions);
-        //         model.renderPredictions(predictions, canvas, context, video);
-        //         if (isVideo) {
-            //             requestAnimationFrame(runDetection);
-            //         }
-            //     });
-            // }
-            
-        })();
+asyncCall();

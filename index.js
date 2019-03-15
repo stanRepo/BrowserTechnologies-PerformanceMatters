@@ -2,7 +2,6 @@
     
     var express = require('express');
     var app = express();
-    var searchBook = require('./public/js/tasks/search') 
 
     // setup template engine
     app.set('view engine', 'ejs');
@@ -36,6 +35,6 @@
 
 
     // listen to port
-    console.log('the server has been restarted')
+    console.log('PORT 8080 | Server Started')
     app.listen(8080);
 }())

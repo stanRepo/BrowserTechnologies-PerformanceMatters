@@ -12,12 +12,14 @@ body {
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
     text-align: center;
-      background:linear-gradient(#00000060, #fff);
+    
 }
 
 h1{
     font-size: 7.5vw;
     color: blue;
+    margin-bottom:0;
+    background:linear-gradient(firebrick, #fff);
 }
 h2{
     font-size: 2.5vw;
@@ -38,7 +40,7 @@ p{
 
 .updatenote {
     padding: 10px;
-    background: rgb(245, 147, 20);
+    background:linear-gradient(#fff, firebrick);
     color: white;
     display: inline;
 }
@@ -66,19 +68,42 @@ p{
 }
 
 .inputSection{
-    grid-column: 2/3;
+    grid-column: 1/2;
     grid-row: 0/2;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:  1fr 1fr 1fr 1fr;
+    background:linear-gradient(firebrick, #fff);
+}
+
+#i-button{
+    grid-column:1/2;
+    grid-row: 2/3;
+    
+}
+#i-text{
+    grid-column:1/2;
+    grid-row: 2/3;
+
+}
+#updatenote{
+    grid-column:1/4;
+    grid-row: 1/2;
 }
 
 #inputField{
  padding: 10px 10px;
  margin-top: 20px;
+ grid-row:2/3;
+ grid-column:3/4;
 }
 
 
-#trackButton{
+#i-button{
     padding: 10px 10px;
     margin-top: 20px;
+    grid-column:1/2;
+    grid-row: 3/4;
 }
 
 #updatenote{
@@ -99,11 +124,11 @@ a{
     text-decoration: none;
 }
 .noScriptBanner{
-    margin-top: -1000px;
+    margin-left: -1000px;
+    margin-top: 200px;
     position: absolute;
     opacity: 1;
     font-weight: 550;
-    background:linear-gradient(#fff, rgba(255, 255, 255, 0));
     animation-name: noScript;
     animation-duration: 1s;
 
@@ -122,27 +147,60 @@ a{
 
 #obaIMG{
     position: absolute;
-    z-index: -100;
-    margin-left: -50vw;
-    margin-top: -60px;
-    opacity: 0.5;
+    z-index: 10;
+    
+    text-align: center;
+    align-content: center;
+    justify-items: center;
+    margin-top: 170px;
+    margin-left: 60px;
+    opacity: 0.8;
+}
+
+#bgImage{
+    position: absolute;
+    z-index:-1000;
+    opacity: 0.2;
+    padding:0;
+    margin-left:-50vw;
+    width: 100vw;
+    height: 50vw;
+
 }
 
 #templateResult{
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr; 
-   grid-template-rows: 1fr 1fr 1fr 1fr
+   grid-template-rows: 1fr 1fr 1fr 1fr;
+   grid-gap: 5vw;
 
 }
 
 .result{
-    border: 1px solid black;
     box-shadow: 0vw 5vh 5vw rgb(0, 0, 0);
     padding: 10px;
+    background-color: firebrick;
+    font-weight: 500;
+    font-family: sans-serif;
 }
 
 .result:nth-child(even){
     
-   
+}
 
+#options{
+    padding: 2vw 2vw;
+    font-size: 20px
+
+}
+
+#form{
+    grid-column:1/2;
+    grid-row:2/3;
+}
+form{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin:5px;
 }

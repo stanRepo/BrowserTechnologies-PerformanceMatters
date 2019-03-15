@@ -1,25 +1,33 @@
 <body>
 
-<h1>
-
-this is the bodyAr route
+<h1>Welcome To OB-AR
 </h1>
 
-<section class="inputSection">
+<img id="obaIMG" src="./assets/obaIMG2.jpeg">
+<img id="bgImage" src="./assets/bg.jpg">
+
+
+
+<div class="inputSection">
+<div id="form"> 
 <form action="input">
-  <input type="text" placeholder="What are you looking for?" id="inputField">
-  <input type="button" value="submit" class="submitButton" id="trackbutton">
-</form>
-</section>
-
+<input type="button" value="submit" class="submitButton" id="i-button">
+<input type="text" placeholder="What are you looking for?" id="i-text">
 <section>
-    <select id="options">
-        <option>Title</option>
-        <option>Author</option>
-        <option>ISBN</option>
-    </select>
+<select id="options">
+<option value="Filter">Filter</option>
+<option>Title</option>
+<option>Author</option>
+<option>ISBN</option>
+</select>
 </section>
+</form>
 
+</div>
+<div id="updatenote" class="updatenote mt10"> loading handtracking model...
+</div>
+
+</div>
 <section id="templateData">
 
 <div id="templateImg"></div>
@@ -27,7 +35,6 @@ this is the bodyAr route
 </section>
 
 <div class="videoClass">
-<div id="updatenote" class="updatenote mt10"> loading model ..</div>
 </div>
 </div>
 <!--
