@@ -1,11 +1,16 @@
-// (function(){
-//     console.log(window)
-// }())
-var submit = document.querySelector('#i-button')
-submit.addEventListener('click', collectAsync)
+(function(){
+    var submit = document.getElementById('i-button')
+    submit.addEventListener('click', getData)
+}())
 
-function collectAsync(){
 
+async function collectAsync(){
+    await collectAsync()
+}
+
+function getData(){
+    
+    
     return new Promise(resolve =>{
         fetch('/assets/results.json')
         .then(function (response) {
@@ -14,22 +19,19 @@ function collectAsync(){
         .then((res) => {
             console.log(res)
             filterResults(res);
+            resolve('resolved');
         })
         .catch((err) => {
             console.log(err);
         })
-        resolve('resolved');
     });   
-}
-    async function getData(){
-        await collectAsync()
-    }   
-
-
-function filterResults(res) {
+}   
+    
+    
+    function filterResults(res) {
     var query = new String(document.querySelector('#i-text').value);
     var option = document.querySelector('#options').value;
-        var optionArray = ['Title', 'Author', 'ISBN']
+    var optionArray = ['Title', 'Author', 'ISBN']
         
         console.log('the query = ' + query);
         
@@ -44,7 +46,7 @@ function filterResults(res) {
     }
     catch(error){()=>{console.log(error)}}
         
-
+    
     
     function templatorTitle(res, query) {
 
@@ -59,11 +61,11 @@ function filterResults(res) {
                 var element = document.createElement("DIV");
                 var href = subject.replace(/\s+/g, '');
                 var elementP = document.createElement("A")
-
+                
                 elementP.setAttribute("href", href);
                 elementP.innerHTML = dataString.concat(subject)
                 element.append(elementP)
-
+                
                 element.classList.add('result');
 
 
@@ -79,3 +81,4 @@ function filterResults(res) {
         }
     }
 };
+
