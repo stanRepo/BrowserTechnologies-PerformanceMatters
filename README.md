@@ -81,11 +81,10 @@ async function callAPI(){
     -   Custom fonts
         To make sure that the user allways gets a good font a styling has been applied to font-family on the body. Each font is a fallback option if the one before fails, beginning with the default system UI-font and ending with sans-serif which tells the browser to pick the first sans-serif font that it finds. This statement covers 100% of the devices and browsers.
 
-        ```css
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-        ```
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+            "Droid Sans", "Helvetica Neue", sans-serif;
+            
 
     -   Color
         To make sure content wouldn't be visible colorblind, a simple color palette has been used that consi
@@ -111,4 +110,42 @@ async function callAPI(){
 This site consists of a server side rendered app thanks to node.js
 I've implemented nodemon with the npm script npm run dev, which runs nodemon index.js
 
-The main bottlenecks I've encountered are scripts
+The main bottlenecks I've encountered are scripts are:
+- images that need to be resized
+- minify js and css
+- The <scripts> that are being loaded take approximately 3.5 sec
+
+
+Performance homepage
+
+Metrics
+First Contentful Paint
+1.5 s
+Speed Index
+1.6 s
+Time to Interactive
+1.6 s
+View Trace
+First Meaningful Paint
+1.5 s
+First CPU Idle
+1.6 s
+Estimated Input Latency
+20 ms
+
+Performance oba-ar
+
+Metrics
+First Contentful Paint
+1.5 s
+Speed Index
+1.5 s
+Time to Interactive
+5.0 s
+View Trace
+First Meaningful Paint
+1.5 s
+First CPU Idle
+5.0 s
+Estimated Input Latency
+260 ms

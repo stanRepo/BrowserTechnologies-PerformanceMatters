@@ -5,7 +5,7 @@
 
 
 async function collectAsync(){
-    await collectAsync()
+    await getData();
 }
 
 function getData(){
@@ -62,6 +62,7 @@ function getData(){
                 var href = subject.replace(/\s+/g, '');
                 var elementP = document.createElement("A")
                 
+                
                 elementP.setAttribute("href", href);
                 elementP.innerHTML = dataString.concat(subject)
                 element.append(elementP)
@@ -71,8 +72,10 @@ function getData(){
 
                 
                 try {
-                    element.value = dataString;
+                    element.value = elementP;
+                    console.log(subject)
                     console.log(element)
+                    console.log(elementP)
                     templateResult.append(element);
                 } catch (error) {
                     console.log(error)
