@@ -107,13 +107,15 @@ async function callAPI(){
 
 ## 8. Performance Matters
 
+At the moment the core functionality fails to load
+
 This site consists of a server side rendered app thanks to node.js
 I've implemented nodemon with the npm script npm run dev, which runs nodemon index.js
 
 The main bottlenecks I've encountered are scripts are:
 - images that need to be resized
 - minify js and css
-- The <scripts> that are being loaded take approximately 3.5 sec
+- The scripts that are being loaded take approximately 3.5 sec
 
 
 Performance homepage
@@ -149,3 +151,5 @@ First CPU Idle
 5.0 s
 Estimated Input Latency
 260 ms
+
+handtrack js loads .bin shards for an extended period of time, though this doesn't interfere with loading the initial content.
