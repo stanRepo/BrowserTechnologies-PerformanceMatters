@@ -90,7 +90,7 @@ async function callAPI(){
     -   Color
         To make sure content wouldn't be visible colorblind, a simple color palette has been used that consi
     -   Mouse/Trackpad Disabled
-        To make sure a user can still tab to content I've made sure that all buttons are either <a> or <button>.
+        To make sure a user can still tab to content I've made sure that all buttons, input and links are either <a> or <button>.
 
     -   Broadband connection
 
