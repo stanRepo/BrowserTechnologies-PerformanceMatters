@@ -115,9 +115,9 @@ ScreenReader:
 
 
 
-Performance homepage
-
-    Metrics
+Performance index.ejs
+14-03-2018
+Metrics:
     First Contentful Paint
     1.5 s
     Speed Index
@@ -133,10 +133,9 @@ Performance homepage
     20 ms
 
 
-Performance oba-ar
-
+Performance about.ejs
+14-03-2018
 Metrics:
-
     First Contentful Paint
     1.5 s
     Speed Index
