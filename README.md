@@ -40,20 +40,7 @@ The homepage renders the earth in AR-view by default
 
 Connecting To the API and retrieving information:
 ```js
-async function callAPI(){
-    var query = document.querySelector('#inputField').value;
-    localStorage.clear();
-    console.log('API called')
-    const api = new API({
-        key: "1e19898c87464e239192c8bfe422f280"
-    });
-    const stream = await api.createStream("search/" + query + "&facet=type(movie)");
-    stream
-        .pipe((res) => {
-            template(res)
-        })
-        .catch(console.error);
-};
+
 ```
 
 ## 5. Design Decisions
@@ -66,12 +53,11 @@ async function callAPI(){
 - [X] Setup Marker entity for ar.js
 - [X] Setup live view on Netlify
 - [X] Add user search input functionality
-- [ ] Setup routes for node.js
-- [ ] Modulize docs
-- [ ] Take out global variables
+- [X] Setup routes for node.js
+- [X] Modulize docs
 - [ ] Fix filter problem for image data from API
 - [ ] Add more Shadowing Effects
-- [ ] fix bug: noscript is being read by the screenreader, see noScript.ejs 
+- [ ] fix bug: noscript is being read by the screenreader, see: noScript.ejs 
 
 ## 7. Browser Technologies
     Features:

@@ -5,6 +5,7 @@ var { index, about, aboutPost, notFound} = require('../controller/indexControlle
 
 router.get('/', index)
 router.get('/about', about)
+router.get('/*', notFound)
 
 router.post('/about', aboutPost)
 

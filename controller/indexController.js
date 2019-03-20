@@ -29,13 +29,13 @@ exports.notFound = (req, res) => {
   res.render('404');
 }
 
+exports.aboutPost = (req, res) =>{
+    console.log('post')
+ res.end(JSON.stringify(req.body))
+}
 
 function filter2(data){
     console.log(data)
     var filterData = data.slice(0,9);
     return filterData
-}
-
-exports.aboutPost = (req, res) =>{
-    
 }
