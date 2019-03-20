@@ -3,51 +3,52 @@
 <h1>Welcome To OB-AR
 </h1>
 
+
+<div id="updatenote" class="updatenote mt10"> loading handtracking model...
+    </div>
 <img id="obaIMG" src="./assets/obaIMG2.jpeg">
 
 
 
 <div class="inputSection">
-<div id="form"> 
-<form action="input">
-<input type="button" value="submit" class="submitButton" id="i-button" tabindex="0">
-<input type="text" placeholder="What are you looking for?" id="i-text" tabindex="0">
-<section>
-<select id="options" tabindex="0">
-<option value="Filter">Filter</option>
-<option>Title</option>
-<option>Author</option>
-<option>ISBN</option>
-</select>
+    <div id="form"> 
+        <form action="input">
+            <input type="button" value="submit" class="submitButton" id="i-button" tabindex="0">
+            <input type="text" placeholder="What are you looking for?" id="i-text" tabindex="0">
+            <section>
+            <select id="options" tabindex="0">
+                <option value="Filter">Filter</option>
+                <option>Title</option>
+                <option>Author</option>
+                <option>ISBN</option>
+            </select>
+            </section>
+
+        </form>
+    </div>
+</div>
+
+
+</div>
+<div class="allBooks" tabindex="0">
+
+
+
+</div>
+
 </section>
-</form>
 
-</div>
-<div id="updatenote" class="updatenote mt10"> loading handtracking model...
-</div>
 
-</div>
-<section id="templateData">
 
-<div id="templateImg"></div>
-<div id="templateResult"></div>
-</section>
+
+
+
+
+
 
 <div class="videoClass">
-</div>
-</div>
-<!--
-
-<a-scene embedded arjs>
-create your content here. just a box for now 
-<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-define a camera which will move according to the marker position
-<a-marker-camera preset='hiro'></a-marker-camera>
-</a-scene>
--->
-
+    </div>
 <video class="videobox canvasbox" autoplay="autoplay" id="myvideo"></video>
-
 <canvas id="canvas" class="border canvasbox"></canvas>
 
 </body>

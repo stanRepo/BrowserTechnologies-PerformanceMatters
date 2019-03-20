@@ -71,6 +71,7 @@ async function callAPI(){
 - [ ] Take out global variables
 - [ ] Fix filter problem for image data from API
 - [ ] Add more Shadowing Effects
+- [ ] fix bug: noscript is being read by the screenreader, see noScript.ejs 
 
 ## 7. Browser Technologies
     Features:
@@ -117,39 +118,53 @@ The main bottlenecks I've encountered are scripts are:
 - minify js and css
 - The scripts that are being loaded take approximately 3.5 sec
 
+ScreenReader: 
+    I've noticed that the screenreader includes the html noscript tag in it's speech. I've added this issue as a bug to the to-do list.
+
+    The screenreader reads the lyrical content of the page good. 
+    It focusses on a specific grid when a grid is "clicked", therefore it slowly progresses through the document at a speed indicated by the user.
+    
+     
+
+
+
 
 Performance homepage
 
-Metrics
-First Contentful Paint
-1.5 s
-Speed Index
-1.6 s
-Time to Interactive
-1.6 s
-View Trace
-First Meaningful Paint
-1.5 s
-First CPU Idle
-1.6 s
-Estimated Input Latency
-20 ms
+    Metrics
+    First Contentful Paint
+    1.5 s
+    Speed Index
+    1.6 s
+    Time to Interactive
+    1.6 s
+    View Trace
+    First Meaningful Paint
+    1.5 s
+    First CPU Idle
+    1.6 s
+    Estimated Input Latency
+    20 ms
+
 
 Performance oba-ar
 
-Metrics
-First Contentful Paint
-1.5 s
-Speed Index
-1.5 s
-Time to Interactive
-5.0 s
-View Trace
-First Meaningful Paint
-1.5 s
-First CPU Idle
-5.0 s
-Estimated Input Latency
-260 ms
+Metrics:
+
+    First Contentful Paint
+    1.5 s
+    Speed Index
+    1.5 s
+    Time to Interactive
+    5.0 s
+    View Trace
+    First Meaningful Paint
+    1.5 s
+    First CPU Idle
+    5.0 s
+    Estimated Input Latency
+    260 ms
 
 handtrack js loads .bin shards for an extended period of time, though this doesn't interfere with loading the initial content.
+
+

@@ -1,3 +1,6 @@
+
+<div id="noscript">
+
 <section class="noScriptBanner">
 
 <div class="noScriptBox">
@@ -8,3 +11,19 @@ If you wish to access the augmented reality functionalities please enable javasc
 
 </div>
 </section>
+
+</div>
+
+
+<script>
+window.addEventListener('load', deleteNoScript, false)
+
+deleteNoScript(){
+    var noscript = document.querySelector('.noScriptBox').value;
+    var parent = document.querySelector('.noScriptBox').value;
+    console.log(noscript);
+    noScriptBox.style.display = 'none';
+}
+
+</script>
+

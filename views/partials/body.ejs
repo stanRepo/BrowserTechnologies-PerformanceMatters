@@ -1,22 +1,38 @@
+
+
+<% include ./noscript %>
+
 <img id="obaIMG" src="./assets/obaIMG2.jpeg">
 <section class="header">
 <h1>Amsterdam Public Library</h1>
 </section>
 
-<h2></h2>
 
 <div class="subHeader">
 <div class="subTitle">
-<h3>This application uses handtracking.js and ar.js to render objects on your hands in augmented reality</h3> 
-<% include ./noscript %>
-  </div>
+</div>
+<div>
+<button id="i-button"><a href="about" tabindex="0">go to ar view</a> 
+</button>
+</div>
 
-  <div>
-    <button ><a href="oba-ar" tabindex="0">go to ar view</a> 
+</div>
+  <div class="allBooks" tabindex="0">
 
-    </button>
-  </div>
+  <% mydata.forEach(book =>{ %>
+  <div class="singleBook">
+ <img class="bookCover" src="<%= book.cover_image %>" alt="Cover Image: <%= book.title %>"></img>
+   <div class="bookTitle" >  <%= book.title %> </div>
+   <div class="bookAuthor">  <%= book.author %> </div>
+   <div class="bookPub">  <%= book.publication_year %> </div>
+   <div class="bookDiscription">  <%= book.description %> </div>
+   </div>  
+ <% }) %>
 
+
+</div>
+
+  
 </div>  
   
 <!--

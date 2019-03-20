@@ -36,6 +36,9 @@ function wrapperFunction() {
                 if (status) {
                     updateNote.innerText = "Video started. Now tracking"
                     isVideo = true
+                    setTimeout(() => {
+                updateNote.innerText = "Move your hand in front of the screen to interact"
+            }, 1000)
                     runDetection()
                 } else {
                     updateNote.innerText = "Please enable video"
@@ -63,8 +66,8 @@ function wrapperFunction() {
                     var myhand = new hand(predictions[0].bbox[0], predictions[0].bbox[1], predictions[0].bbox[2], predictions[0].bbox[3])
 
                     setTimeout(() => {
-                        console.log(myhand);
-                    }, 200)
+                        // console.log(myhand);
+                    }, 10)
                 }
 
                 model.renderPredictions(predictions, canvas, context, video);
@@ -79,9 +82,8 @@ function wrapperFunction() {
             // detect objects in the image.
             model = lmodel
             updateNote.innerText = "Model Loaded"
-            setTimeout(() => {
-                updateNote.innerText = "Move your hand in front of the screen to interact"
-            }, 1000)
+            console.log('Model Loaded')
+            
             trackButton.disabled = false
             resolve('resolved');
         });
@@ -89,8 +91,8 @@ function wrapperFunction() {
 };
 
 async function asyncCall() {
-    await wrapperFunction();
     console.log('Loading model Async')
+    await wrapperFunction();
 }
 
 asyncCall();
