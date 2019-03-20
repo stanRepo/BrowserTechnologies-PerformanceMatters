@@ -7,7 +7,7 @@ This is a single page web appication. oba-r
 1. [Live demo](#1-Live-demo)
 2. [Install](#2-Install)
 3. [Features](#3-Features)
-4. [API](#4-API)
+4. [DATA](#4-DATA)
 5. [Design decisions](#5-Design-Decisions)
 6. [To-do](#6-To-do)
 7. [Browser Technologies](#7-Browser-Technologies)
@@ -35,11 +35,27 @@ The homepage renders the earth in AR-view by default
 
 
 
-## 4. API
+## 4. DATA
 
 
 Connecting To the API and retrieving information:
 ```js
+exports.index = (req, res) => {
+    // console.log("dit is de index function")
+    // console.log('./public/assets/results.json')
+    fs.readFile('./public/assets/results.json', (err , data) => {
+        data = JSON.parse(data.toString())
+        const filterData = filter2(data.data) 
+
+        console.log(filter2(data.data).length)
+        // const test =  JSON.parse(data.toString())
+        console.log(filterData.length)
+          res.render('index.ejs', {
+              mydata: filterData
+          });
+    })
+    // console.log(array)
+}
 
 ```
 

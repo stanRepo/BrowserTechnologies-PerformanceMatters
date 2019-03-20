@@ -23,13 +23,17 @@
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json())
 
-// use router to handle  all requests
+    // use router to handle  all requests
     app.use('/', router);
-
-
-
-
     
+    
+    
+    // listen to port
+    console.log('PORT 8080 | Server Started')
+    app.listen(8080);
+    }())
+
+
     // get routes
     // app.get('/', (req, res) => {
 
@@ -63,8 +67,3 @@
     //     res.render('./pages/404');
     // });
 
-
-    // listen to port
-    console.log('PORT 8080 | Server Started')
-    app.listen(8080);
-}())
