@@ -16,12 +16,15 @@ This is a single page web appication. oba-r
 
 ## 1. Live Demo
 <!-- https://oba-ar.netlify.com -->
-Heroku!
+Heroku! under construction
 
 
 ## 2. Install
-To install the project just fork it and clone it to your device.
-Then launch the "project-1-1819" folder. 
+To install the project just fork it and 1. Clone it to your device.
+2. Use npm install to install node dependencies.
+3. Open a node.js terminal
+4. Go to the folder that includes the cloned repository
+5. For development mode enter command: npm run dev 
 
 ## 3. Features
 This project features an Augmented Reality experience for visitors of the Public Library of Amsterdam. It uses the ar.js library and a-frame. Users can type in a query and select submit. The sourcecode wil then call the library's API and renders the title, author and short description in AR back to the user via a camera instance. 
@@ -132,7 +135,7 @@ ScreenReader:
 
 
 Performance index.ejs
-14-03-2018
+14-03-2019
 Metrics:
     First Contentful Paint
     1.5 s
@@ -150,7 +153,7 @@ Metrics:
 
 
 Performance about.ejs
-14-03-2018
+14-03-2019
 Metrics:
     First Contentful Paint
     1.5 s
@@ -167,5 +170,24 @@ Metrics:
     260 ms
 
 handtrack js loads .bin shards for an extended period of time, though this doesn't interfere with loading the initial content.
+
+Performance increase: caching
+20-03-2019
+
+index.ejs
+    Metrics first load:
+        First Contentful Paint 
+        1.1 s
+        Speed Index
+        1.1 s
+        Time to Interactive
+        1.1 s
+        View Trace
+        First Meaningful Paint
+        1.1 s
+        First CPU Idle
+        1.1 s
+        Estimated Input Latency
+        10 ms
 
 
