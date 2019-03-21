@@ -20,13 +20,13 @@
   <div class="allBooks" tabindex="0">
 
   <% mydata.forEach(book =>{ %>
-  <div class="singleBook">
+  <div class="singleBook"><a href="<%= book.isbn %>">
  <img class="bookCover" src="<%= book.cover_image %>" alt="Cover Image: <%= book.title %>"></img>
    <div class="bookTitle" >  <%= book.title %> </div>
    <div class="bookAuthor">  <%= book.author %> </div>
    <div class="bookPub">  <%= book.publication_year %> </div>
    <div class="bookDiscription">  <%= book.description %> </div>
-   </div>  
+   </a></div>  
  <% }) %>
 
 

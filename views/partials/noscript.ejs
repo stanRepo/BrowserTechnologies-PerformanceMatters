@@ -16,14 +16,13 @@ If you wish to access the augmented reality functionalities please enable javasc
 
 
 <script>
+
 window.addEventListener('load', deleteNoScript, false);
 
-deleteNoScript(){
-    var noscript = document.querySelector('.noScriptBox').value;
-    var parent = document.querySelector('.noScriptBox').value;
-    console.log(noscript);
-    noScriptBox.style.display = 'none';
-}
+function deleteNoScript(){
+    const noScript = document.querySelector('noscript');
+    noScript.parentNode.removeChild(noScript)
+    console.log('Client Side Javascript is available: deleted noscript')
 
 </script>
 
