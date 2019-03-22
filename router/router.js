@@ -10,7 +10,4 @@ router.get('/=:id', detail)
 
 router.get('/*', notFound)
 
-router.post('/about', aboutPost)
-
-
 module.exports = router;
