@@ -21,10 +21,15 @@ exports.index = (req, res) => {
                // console.log(data)
 
                 localStorage.setItem('data', JSON.stringify(data.data))
-
+                for(var i = 0; i< 10; i++){
+                    // Create random number and send random objects (by random number iterator) to the render object
+                    var e = Math.floor(Math.random()*3.782)
+                    array.push(currentStorage[e])
+                    console.log(e)
+                }
                 // render file + data
                 res.render('index.ejs', {
-                    mydata: currentStorage
+                    mydata: array
                 });
 
             } catch (err) {

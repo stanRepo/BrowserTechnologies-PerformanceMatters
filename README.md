@@ -130,7 +130,7 @@ ScreenReader:
     It focusses on a specific grid when a grid is "clicked", therefore it slowly progresses through the document at a speed indicated by the user.
     
      
-
+ 
 
 
 

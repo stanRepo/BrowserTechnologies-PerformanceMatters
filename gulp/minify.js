@@ -18,4 +18,7 @@ var uglify = require('gulp-uglify')
       .pipe(uglify())
       // Output
       .pipe(gulp.dest('/public/dist/js'))
-  });
+    });
+
+    console.log('minified')
+
