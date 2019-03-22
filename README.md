@@ -83,7 +83,7 @@ exports.index = (req, res) => {
 
     -   Images
     With images disabled the section that shows where the image should be is still visible. This is not a good sight. Therefore in the future I want to use .svg files instead of .jpg add styling.
-     
+      
     -   Custom fonts
         To make sure that the user allways gets a good font a styling has been applied to font-family on the body. Each font is a fallback option if the one before fails, beginning with the default system UI-font and ending with sans-serif which tells the browser to pick the first sans-serif font that it finds. This statement covers 100% of the devices and browsers.
 
