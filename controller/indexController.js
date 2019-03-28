@@ -4,51 +4,18 @@ var fs = require('fs');
 var localStorage = require('localStorage');
 // var mydata = require('/assets/results.json')
 let array = []
+
+
+// get data
 exports.index = (req, res) => {
-
-    var myStorage = myLocalStorage()
-
-
-    // console.log('found data = ' + myStorage);
-    if (myStorage === false) {
-        fs.readFile('./public/assets/results.json', (err, data) => {
-            data =  JSON.parse(data.toString())
-            try {
-                const currentStorage = filter2(data.data)
-
-
-                console.log('new currentStorage length =' + currentStorage.length)
-               // console.log(data)
-
-                localStorage.setItem('data', JSON.stringify(data.data))
-                for(var i = 0; i< 10; i++){
-                    // Create random number and send random objects (by random number iterator) to the render object
-                    var e = Math.floor(Math.random()*3.782)
-                    array.push(currentStorage[e])
-                    console.log(e)
-                }
-                // render file + data
-                res.render('index.ejs', {
-                    mydata: array
-                });
-
-            } catch (err) {
-                console.log('error during data retrievement = ' + err)
-            }
-        })
-    } else {
-
-        const data = localStorage.getItem('data');
-        var currentStorage = JSON.parse(data);
-        //console.log(currentStorage);
-        console.log('old currentStorage length: ' + data.length);
-
-        // render file + data
+    fs.readFile('./public/assets/results.json', (err, data) => {
+        data = JSON.parse(data.toString())
+        slicedData = filter2(data.data);
+        //render file + data
         res.render('index.ejs', {
-            mydata: currentStorage
+            mydata: slicedData
         });
-    }
-    // console.log(array)
+    })
 }
 
 exports.about = (req, res) => {
@@ -56,26 +23,27 @@ exports.about = (req, res) => {
 }
 
 exports.notFound = (req, res) => {
+    console.log('error from notfound:   ' + res.err)
     res.render('404');
 }
 exports.detail = (req, res) => {
     getBookById(req.params.id, res)
-    
+
 }
 
-function getBookById(id, res){
+function getBookById(id, res) {
     fs.readFile('./public/assets/results.json', (err, data) => {
-        data =  JSON.parse(data.toString())
+        data = JSON.parse(data.toString())
         // console.log(data.data[0].isbn)
-        console.log("Dit is de id van detail:"+id)
-    data.data.forEach(book =>{
-        if(book.isbn === '=' + id){
-            console.log(book)
-            res.render('detail', {
-                mydata: book
-            });
-        }
-    })
+        console.log("Dit is de id van detail:" + id)
+        data.data.forEach(book => {
+            if (book.isbn === '=' + id) {
+                console.log('Entered DetailSite: ' + book.title)
+                res.render('detail', {
+                    mydata: book
+                });
+            }
+        })
     })
 }
 
@@ -83,16 +51,4 @@ function filter2(data) {
     // console.log(data)
     var filterData = data.slice(0, 9);
     return filterData
-}
-
-function myLocalStorage() {
-    var currentStorage = localStorage.getItem('data');
-    //   console.log('value of getItem = ' + currentStorage);
-    if (currentStorage === null || currentStorage === undefined) {
-        console.log('returned value = ' + false)
-        return false;
-    } else {
-        console.log('returned value = ' + true)
-        return true;
-    }
 }

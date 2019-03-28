@@ -1,72 +1,89 @@
 @media only screen and (max-width: 800px) {
-  p{
+  p {
     font-size: 125%;
   }
-  #obaIMG{
-    margin-left:-180px;
+
+  #obaIMG {
+    margin-left: -180px;
     width: 380px;
     height: 350px;
     opacity: 0.1;
     z-index: -10;
-  
+
     border-radius: 20vw;
   }
-  #form{
-    grid-column:1/3;
-    grid-row:2/3;
-}
-#i-button{
-  width: 50%;
-}
 
-.allBooks{
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-}
+  #form {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  #i-button {
+    width: 50%;
+  }
+
+  .allBooks {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
 
 }
 
 @media only screen and (max-width: 600px) {
-   h3{
-       font-size: 15px;
-      }
-      
-      #obaIMG{
-        margin-left:-100px;
-        width: 340px;
-        height: 220px;  
-   }
-   
-   
-   #videoClass{
+  h3 {
+    font-size: 15px;
+  }
+
+  #obaIMG {
+    margin-left: -100px;
+    width: 340px;
+    height: 220px;
+  }
+
+
+  #videoClass {
     grid-column: 1/2;
-    grid-row:2/3;
+    grid-row: 2/3;
   }
-  #updatenote{
+
+  #updatenote {
     font-size: 5vw;
-   }
-   .allBooks{
-     grid-template-columns: 1fr;
-     grid-gap: 20px;
-   }
-   
   }
-  
-  @media only screen and (max-width: 350px) {
-    p{
-      font-size: 90%;
-    }
-    #obaIMG{
-      margin-left:-110px;
-      width: 215px;
-      height: 205px;
-    }
-    #i-button{
-      grid-column:1/2;
-      grid-row: 3/4;
-      
-    }
-    .singleBook{
-    }
-    
+
+  .allBooks {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
   }
+
+  .singleBook {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  p {
+    font-size: 90%;
+  }
+
+  #obaIMG {
+    margin-left: -110px;
+    width: 215px;
+    height: 205px;
+  }
+
+  #i-button {
+    grid-column: 1/2;
+    grid-row: 3/4;
+
+  }
+
+  .singleBook {
+    width: 95vw;
+  }
+
+  .allBooks {
+
+    grid-gap: 20px;
+  }
+
+}

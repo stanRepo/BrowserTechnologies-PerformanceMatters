@@ -1,10 +1,12 @@
 <h1>this is a detail page</h1>
 <button ><a href="/">Return To Home</a></button>
 
-<div class="singleBook">
-<img class="bookCover" src="<%= mydata.cover_image %>" alt="Cover Image: <%= mydata.title %>"></img>
- <div class="bookTitle" >  <%= mydata.title %> </div>
- <div class="bookAuthor">  <%= mydata.author %> </div>
- <div class="bookPub">  <%= mydata.publication_year %> </div>
- <div class="bookDiscription">  <%= mydata.description %> </div>
- </div>  
+<div class="allbooks">
+    <div class="singleBook">
+        <img class="bookCover" src="<%= mydata.cover_image %>" alt="Cover Image: <%= mydata.title %>"></img>
+        <div class="bookTitle" >  <%= mydata.title %> </div>
+        <div class="bookAuthor">  <%= mydata.author %> </div>
+        <div class="bookPub">  <%= mydata.publication_year %> </div>
+        <div class="bookDiscription">  <%= mydata.description %> </div>
+    </div>  
+</div>

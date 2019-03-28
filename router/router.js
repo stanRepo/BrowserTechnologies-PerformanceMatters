@@ -8,6 +8,4 @@ router.get('/about', about)
 router.get('/=:id', detail)
 
 
-router.get('/*', notFound)
-
 module.exports = router;

@@ -29,14 +29,7 @@ To install the project just fork it and 1. Clone it to your device.
 ## 3. Features
 This project features an Augmented Reality experience for visitors of the Public Library of Amsterdam. It uses the ar.js library and a-frame. Users can type in a query and select submit. The sourcecode wil then call the library's API and renders the title, author and short description in AR back to the user via a camera instance. 
 
-The homepage renders the earth in AR-view by default
-
-<!-- ![With Camera Entity](StanOoms1.JPG)
-![Without Camera Entity](StanOoms2.JPG)
-![View After submitting a Query](StanOoms3.JPG)
-![View After Selecting a object from the Query](StanOoms4.JPG) -->
-
-
+Augmented Reality implementation has been delayed due to the sparse amount of time that's available to implement it. 
 
 ## 4. DATA
 
@@ -77,6 +70,9 @@ exports.index = (req, res) => {
 - [ ] Fix filter problem for image data from API
 - [ ] Add more Shadowing Effects
 - [ ] fix bug: noscript is being read by the screenreader, see: noScript.ejs 
+- [ ] Fix Revision
+- [ ] Fix SW
+- [ ] Fix manifest
 
 ## 7. Browser Technologies
     Features:
@@ -161,7 +157,6 @@ Metrics:
     1.5 s
     Time to Interactive
     5.0 s
-    View Trace
     First Meaningful Paint
     1.5 s
     First CPU Idle
@@ -176,18 +171,17 @@ Performance increase: caching
 
 index.ejs
     Metrics first load:
-        First Contentful Paint 
+        - First Contentful Paint: 
         1.1 s
-        Speed Index
+        - Speed Index:
         1.1 s
-        Time to Interactive
+        - Time to Interactive:
         1.1 s
-        View Trace
-        First Meaningful Paint
+        - First Meaningful Paint:
         1.1 s
-        First CPU Idle
+        - First CPU Idle:
         1.1 s
-        Estimated Input Latency
+        - Estimated Input Latency: 
         10 ms
 
 

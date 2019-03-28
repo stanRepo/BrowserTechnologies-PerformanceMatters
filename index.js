@@ -26,8 +26,6 @@
     // use router to handle  all requests
     app.use('/', router);
     
-    
-    
     // listen to port
     console.log('PORT 8080 | Server Started')
     app.listen(8080);

@@ -3,24 +3,24 @@
 <% include ./noscript %>
 
 <img id="obaIMG" src="./assets/obaIMG2.jpeg">
-<section class="header">
-<h1>Amsterdam Public Library</h1>
+  <section class="header">
+  <h1>Amsterdam Public Library</h1>
 </section>
 
 
 <div class="subHeader">
-<div class="subTitle">
-</div>
-<div>
-<button id="i-button"><a href="about" tabindex="0">go to ar view</a> 
-</button>
+  <div class="subTitle">
+  </div>
+  <div>
+  <button id="i-button"><a href="about" tabindex="0">go to ar view</a> 
+    </button>
 </div>
 
 </div>
   <div class="allBooks" tabindex="0">
 
   <% mydata.forEach(book =>{ %>
-  <div class="singleBook"><a href="<%= book.isbn %>">
+  <div class="singleBook"><a href="<%= book.isbn %>"</a>
  <img class="bookCover" src="<%= book.cover_image %>" alt="Cover Image: <%= book.title %>"></img>
    <div class="bookTitle" >  <%= book.title %> </div>
    <div class="bookAuthor">  <%= book.author %> </div>
