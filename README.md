@@ -134,6 +134,8 @@ Audits:
 Final Audit:
 ## 7. Audit
 
+![Lighthouse final performance check](https://github.com/Stanargy/BrowserTechnologies-PerformanceMatters/blob/master/public/assets/lighthouse_end.JPG)
+
 
 Performance index.ejs
 14-03-2019
