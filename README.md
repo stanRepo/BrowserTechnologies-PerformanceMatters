@@ -107,6 +107,14 @@ exports.index = (req, res) => {
         When localstorage is turned off I will need to implement the same fallback strategy as with Cookies. But in this case I will also make sure the site still makes a call to retrieve data even though it can't store them locally.
 
 
+ScreenReader: 
+    I've noticed that the screenreader includes the html noscript tag in it's speech. I've added this issue as a bug to the to-do list.
+
+    The screenreader reads the lyrical content of the page good. 
+    It focusses on a specific grid when a grid is "clicked", therefore it slowly progresses through the document at a speed indicated by the user.
+    
+
+
 ## 8. Performance Matters
 
 At the moment the core functionality fails to load
@@ -119,15 +127,12 @@ The main bottlenecks I've encountered are scripts are:
 - minify js and css
 - The scripts that are being loaded take approximately 3.5 sec
 
-ScreenReader: 
-    I've noticed that the screenreader includes the html noscript tag in it's speech. I've added this issue as a bug to the to-do list.
 
-    The screenreader reads the lyrical content of the page good. 
-    It focusses on a specific grid when a grid is "clicked", therefore it slowly progresses through the document at a speed indicated by the user.
-    
-     
  
+Audits:
 
+Final Audit:
+## 7. Audit
 
 
 Performance index.ejs

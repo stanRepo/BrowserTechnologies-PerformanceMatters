@@ -12,6 +12,7 @@ body {
         "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
         "Droid Sans", "Helvetica Neue", sans-serif;
     text-align: center;
+    background-color: rgb(255, 231, 231);
     
 }
 
@@ -194,7 +195,7 @@ a {
 }
 
 .allBooks{
-    background-image: url("https://nl.freepik.com/vrije-vector/open-boek-met-mystiek-fel-licht_3924904.htm");
+   
     display: grid;
     width: 74vw;
     margin-left: 10vw;

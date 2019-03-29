@@ -6,7 +6,8 @@ const cacheAssets = [
     '/',
     '/dist/css/style.css',
     '/assets/obaIMG2.jpeg'
-    
+
+
     // 'detail.ejs',
     // '404.ejs',
     // 'about.ejs',
@@ -47,8 +48,43 @@ self.addEventListener('activate', (event => {
 
 
 // Serve Files When offline
+
+// Op dit moment wordt als eerste een nieuwe request gevuurd naar de server ipv naar de cache
+// offline wordt de cache niet geupdate
+
+// voeg code toe aan fetch event
 self.addEventListener('fetch', event =>{
     console.log('Service Worker: Fetching');
+    
+    // Fetch aan het netwerk
     event.respondWith(fetch(event.request)
-    .catch(()=> caches.match(event.request)))
+    .then((res) => {
+
+                        // Hier hebben we een antwoord van het netwerk gehad in de variable 'res'
+                        //console.log(res);
+                        // event.request.url
+                        // Bepalen of we dit bestand willen cachen
+                        // .. zo ja -> Caches openen en updaten
+        caches
+        .open(cacheName)
+        .then(cache => {
+            console.log('Service Worker: Caching Files', [event.request.url]);
+            cache.addAll([event.request.url]);
+        })
+
+
+
+
+        // .. Deze geven we door aan de browser.. EINDE
+        return res;
+    })
+    .catch(() => {
+        // fetch() is mislukt, we gaan proberen uit de cache te leveren
+           // console.log('from cache', event.request);
+            return caches.match(event.request);
+            // Cache openen 
+            // Cache updaten
+
+        })
+    )
 })
