@@ -135,40 +135,40 @@ Final Audit:
 ## 7. Audit
 
 ![Lighthouse final performance check](https://github.com/Stanargy/BrowserTechnologies-PerformanceMatters/blob/master/public/assets/lighthouse_end.JPG)
+![Lighthouse final progressive web app check](https://github.com/Stanargy/BrowserTechnologies-PerformanceMatters/blob/master/public/assets/lighthouse_end2.JPG)
 
 
 Performance index.ejs
 14-03-2019
 Metrics:
-    First Contentful Paint
+    -   First Contentful Paint
     1.5 s
-    Speed Index
+    -   Speed Index
     1.6 s
-    Time to Interactive
+    -   Time to Interactive
     1.6 s
-    View Trace
-    First Meaningful Paint
+    -   First Meaningful Paint
     1.5 s
-    First CPU Idle
+    -   First CPU Idle
     1.6 s
-    Estimated Input Latency
+    -   Estimated Input Latency
     20 ms
 
 
 Performance about.ejs
 14-03-2019
 Metrics:
-    First Contentful Paint
+    -   First Contentful Paint
     1.5 s
-    Speed Index
+    -   Speed Index
     1.5 s
-    Time to Interactive
+    -   Time to Interactive
     5.0 s
-    First Meaningful Paint
+    -   First Meaningful Paint
     1.5 s
-    First CPU Idle
+    -   First CPU Idle
     5.0 s
-    Estimated Input Latency
+    -   Estimated Input Latency
     260 ms
 
 handtrack js loads .bin shards for an extended period of time, though this doesn't interfere with loading the initial content.
@@ -178,17 +178,17 @@ Performance increase: caching
 
 index.ejs
     Metrics first load:
-        - First Contentful Paint: 
+        -   First Contentful Paint: 
         1.1 s
-        - Speed Index:
+        -   Speed Index:
         1.1 s
-        - Time to Interactive:
+        -   Time to Interactive:
         1.1 s
-        - First Meaningful Paint:
+        -   First Meaningful Paint:
         1.1 s
-        - First CPU Idle:
+        -   First CPU Idle:
         1.1 s
-        - Estimated Input Latency: 
+        -   Estimated Input Latency: 
         10 ms
 
 
