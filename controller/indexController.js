@@ -18,6 +18,10 @@ exports.index = (req, res) => {
     })
 }
 
+exports.offline = (req, res) =>{
+    res.render('offline')
+}
+
 exports.about = (req, res) => {
     res.render('about');
 }

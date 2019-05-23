@@ -7,6 +7,8 @@
     var fs = require('fs')
     var path = require('path');
     var router = require('./router/router');
+
+    const PORT = 3000;
    
    
    
@@ -27,8 +29,8 @@
     app.use('/', router);
     
     // listen to port
-    console.log('PORT 8080 | Server Started')
-    app.listen(8080);
+    console.log(`PORT ${PORT} | Server Started`)
+    app.listen(PORT);
     }())
 
 

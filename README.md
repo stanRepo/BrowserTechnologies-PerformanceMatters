@@ -63,15 +63,15 @@ exports.index = (req, res) => {
 - [X] Add a Camera entity
 - [X] Add AR-objects to the view that show off potential of web-based-AR
 - [X] Setup Marker entity for ar.js
-- [X] Setup live view on Netlify
+- [ ] Setup live
 - [X] Add user search input functionality
 - [X] Setup routes for node.js
 - [X] Modulize docs
-- [ ] Fix filter problem for image data from API
-- [ ] Add more Shadowing Effects
-- [ ] fix bug: noscript is being read by the screenreader, see: noScript.ejs 
+- [X] Fix filter problem for image data from API
+- [X] Add more Shadowing Effects
+- [X] fix bug: noscript is being read by the screenreader, see: noScript.ejs 
 - [ ] Fix Revision
-- [ ] Fix SW
+- [X] Fix SW
 - [ ] Fix manifest
 
 ## 7. Browser Technologies
@@ -171,7 +171,6 @@ Metrics:
     -   Estimated Input Latency
     260 ms
 
-handtrack js loads .bin shards for an extended period of time, though this doesn't interfere with loading the initial content.
 
 Performance increase: caching
 20-03-2019
@@ -191,4 +190,5 @@ index.ejs
         -   Estimated Input Latency: 
         10 ms
 
+handtrack js loads .bin shards for an extended period of time, though this doesn't interfere with loading the initial content.
 

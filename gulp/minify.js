@@ -4,8 +4,8 @@ const concat = require('gulp-concat');
 
 const cssnano = require('gulp-cssnano');
 
-gulp.src(['public/css/style.css', 'public/css/keyframes.css', 'public/css/media.css'])
-.pipe(concat('style.css'))
+gulp.src(['public/css/styles.css', 'public/css/keyframes.css', 'public/css/media.css'])
+.pipe(concat('styles.css'))
 .pipe(cssnano({discardComments:{removeAll:true}}))
 .pipe(gulp.dest("public/dist/css"));
 

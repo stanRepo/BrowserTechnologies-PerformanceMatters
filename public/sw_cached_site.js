@@ -5,8 +5,8 @@ const cacheName = 'v1';
 const cacheAssets = [
     '/',
     '/dist/css/style.css',
-    '/assets/obaIMG2.jpeg'
-
+    '/assets/obaIMG2.jpeg',
+    '/offline'
 
     // 'detail.ejs',
     // '404.ejs',
@@ -53,34 +53,32 @@ self.addEventListener('activate', (event => {
 // offline wordt de cache niet geupdate
 
 // voeg code toe aan fetch event
-self.addEventListener('fetch', event =>{
+self.addEventListener('fetch', event => {
     console.log('Service Worker: Fetching');
-    
     // Fetch aan het netwerk
     event.respondWith(fetch(event.request)
-    .then((res) => {
+        .then((res) => {
 
-                        // Hier hebben we een antwoord van het netwerk gehad in de variable 'res'
-                        //console.log(res);
-                        // event.request.url
-                        // Bepalen of we dit bestand willen cachen
-                        // .. zo ja -> Caches openen en updaten
-        caches
-        .open(cacheName)
-        .then(cache => {
-            console.log('Service Worker: Caching Files', [event.request.url]);
-            cache.addAll([event.request.url]);
+            // Hier hebben we een antwoord van het netwerk gehad in de variable 'res'
+            //console.log(res);
+            // event.request.url
+            // Bepalen of we dit bestand willen cachen
+            // .. zo ja -> Caches openen en updaten
+                 caches .open(cacheName)
+                .then(cache => {
+                    console.log('Service Worker: Caching Files', [event.request.url]);
+                    cache.addAll([event.request.url]);
+                }).catch(()=>getFall)
+
+
+
+
+            // .. Deze geven we door aan de browser.. EINDE
+            return res;
         })
-
-
-
-
-        // .. Deze geven we door aan de browser.. EINDE
-        return res;
-    })
-    .catch(() => {
-        // fetch() is mislukt, we gaan proberen uit de cache te leveren
-           // console.log('from cache', event.request);
+        .catch(() => {
+            // fetch() is mislukt, we gaan proberen uit de cache te leveren
+            // console.log('from cache', event.request);
             return caches.match(event.request);
             // Cache openen 
             // Cache updaten
@@ -88,3 +86,7 @@ self.addEventListener('fetch', event =>{
         })
     )
 })
+
+
+// RUNTIME CACHING
+
